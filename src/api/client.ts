@@ -1,7 +1,12 @@
 import { VideoListResponse, ReportData, SettingsConfig } from '../types';
 
-// In production (e.g. Vercel), set VITE_API_URL=https://your-backend-domain.com
-const envApiUrl = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+// In production (e.g. Vercel), default to the deployed backend on Render
+const defaultProdBackend = 'https://crime-ai-backend.onrender.com';
+const envApiUrl = (
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD ? defaultProdBackend : '')
+).replace(/\/+$/, '');
+
 const API_BASE = envApiUrl ? (envApiUrl.endsWith('/api') ? envApiUrl : `${envApiUrl}/api`) : '/api';
 
 export const apiClient = {
