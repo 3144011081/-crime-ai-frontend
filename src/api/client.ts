@@ -1,7 +1,7 @@
 import { VideoListResponse, ReportData, SettingsConfig } from '../types';
 
-// In production (e.g. Vercel), default to the deployed backend on Render
-const defaultProdBackend = 'https://crime-ai-backend.onrender.com';
+// In production (e.g. Vercel), default to the live Cloudflare Tunnel backend
+const defaultProdBackend = 'https://reserved-inf-pod-trends.trycloudflare.com';
 const envApiUrl = (
   import.meta.env.VITE_API_URL ||
   (import.meta.env.PROD ? defaultProdBackend : '')

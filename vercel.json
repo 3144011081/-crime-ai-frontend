@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/api/:match*",
-      "destination": "https://crime-ai-backend.onrender.com/api/:match*"
+      "destination": "https://reserved-inf-pod-trends.trycloudflare.com/api/:match*"
     },
     {
       "source": "/(.*)",
